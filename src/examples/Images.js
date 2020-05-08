@@ -12,7 +12,7 @@ const getImages = graphql`
         }
       }
     }
-    fluid: file(relativePath: { eq: "image4.jpeg" }) {
+    fluid: file(relativePath: { eq: "image3.jpeg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -44,8 +44,11 @@ console.log(data)
         <Image fixed={data.fixed.childImageSharp.fixed} />
       </article>
       <article className="single-image">
-        <h3>fixed image/blur</h3>
+        <h3>Fluid image/blur</h3>
         <Image fluid={data.fluid.childImageSharp.fluid} />
+        <div className="small">
+        <Image fluid={data.fluid.childImageSharp.fluid} />
+        </div>
       </article>
 
 
